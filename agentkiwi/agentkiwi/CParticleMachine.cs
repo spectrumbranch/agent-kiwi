@@ -9,8 +9,10 @@ namespace agentkiwi
 {
     class CParticleMachine
     {
-        private List<CParticle> _lvl1Part; //fastest particles
+        private List<CParticle> _lvl1Part;
+        
         Random randomizer = new Random();
+        private Vector2 _position = new Vector2(300, 300);
 
         public CParticleMachine()
         {
@@ -23,10 +25,19 @@ namespace agentkiwi
             {
                 part.update(gameTime);
             }
-            _lvl1Part.Add(new CParticle(new Color(255, 255, 255), randomizer.Next(1, 5), new Vector2(300, 300), randomizer.Next(50, 80), new Vector2(145, 225)));
+            _lvl1Part.Add(new CParticle(new Color(255,255,0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
+            _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
+            _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
+
+            _lvl1Part.Add(new CParticle(new Color(255, 150, 0), randomizer.Next(1, 3), _position, randomizer.Next(70, 100), new Vector2(160, 210)));
+            _lvl1Part.Add(new CParticle(new Color(255, 150, 0), randomizer.Next(1, 3), _position, randomizer.Next(70, 100), new Vector2(145, 210)));
+
+            _lvl1Part.Add(new CParticle(new Color(255, 30, 0), randomizer.Next(1, 2), _position, randomizer.Next(90, 120), new Vector2(170, 190)));
+
 
             _lvl1Part.RemoveAll(p => p.dead == true);
 
+            _position.X += 3;
             
         }
 
