@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CCandle.cs" />
     <Compile Include="CParticle.cs" />
     <Compile Include="CParticleMachine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

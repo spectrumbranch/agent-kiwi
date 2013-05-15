@@ -16,7 +16,7 @@ namespace agentkiwi
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         CParticleMachine machine = null;
-
+        CCandle candle = new CCandle(new Vector2(300, 300));
         Rectangle cakerect;
         Texture2D caketex;
 
@@ -47,11 +47,12 @@ namespace agentkiwi
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CParticle.box = Content.Load<Texture2D>("box");
-            machine = new CParticleMachine();
+            machine = new CParticleMachine(type.ROCKET, new Vector2(200,200));
 
             cakerect = new Rectangle(0, 0, screenWidth, screenHeight);
             caketex = Content.Load<Texture2D>("cake");
             candletex = Content.Load<Texture2D>("candle");
+            CCandle.candle = candletex;
         }
 
         protected override void UnloadContent()  {  }
@@ -64,7 +65,7 @@ namespace agentkiwi
             }
 
             machine.update(gameTime);
-
+            candle.update(gameTime);
 
             base.Update(gameTime);
         }
@@ -74,12 +75,15 @@ namespace agentkiwi
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
+            
             spriteBatch.Draw(caketex, cakerect, Color.White);
-            foreach (Vector2 displacement in new Vector2[] {new Vector2(0,0), new Vector2(100,100)}) 
+            foreach (Vector2 displacement in new Vector2[] { new Vector2(0, 0), new Vector2(100, 100) })
             {
-                spriteBatch.Draw(candletex, new Rectangle((int)displacement.X, (int)displacement.Y, 15, 120), Color.White);
+
             }
+            candle.draw(spriteBatch);
             machine.draw(spriteBatch);
+           
             spriteBatch.End();
 
             base.Draw(gameTime);
