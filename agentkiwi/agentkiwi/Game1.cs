@@ -16,7 +16,7 @@ namespace agentkiwi
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         CParticleMachine machine = null;
-        CCandle candle = new CCandle(new Vector2(300, 300));
+        CCandle[] candle = new CCandle[25];
         Rectangle cakerect;
         Texture2D caketex;
 
@@ -57,6 +57,33 @@ namespace agentkiwi
             candletex = Content.Load<Texture2D>("candle");
             CCandle.candle = candletex;
 
+            candle[0] = new CCandle(new Vector2(130,330));
+            candle[1] = new CCandle(new Vector2(200, 340));
+            candle[2] = new CCandle(new Vector2(160, 320));
+            candle[3] = new CCandle(new Vector2(600, 120));
+            candle[4] = new CCandle(new Vector2(550, 160));
+            candle[5] = new CCandle(new Vector2(650, 160));
+            candle[6] = new CCandle(new Vector2(300, 350));
+            candle[7] = new CCandle(new Vector2(340, 360));
+            candle[8] = new CCandle(new Vector2(390, 370));
+            candle[9] = new CCandle(new Vector2(440, 400));
+            candle[10] = new CCandle(new Vector2(490, 380));
+            candle[11] = new CCandle(new Vector2(530, 385));
+            candle[12] = new CCandle(new Vector2(590, 400));
+            candle[13] = new CCandle(new Vector2(630, 390));
+            candle[14] = new CCandle(new Vector2(680, 390));
+            candle[15] = new CCandle(new Vector2(780, 370));
+            candle[16] = new CCandle(new Vector2(830, 380));
+            candle[17] = new CCandle(new Vector2(870, 360));
+            candle[18] = new CCandle(new Vector2(920, 355));
+            candle[19] = new CCandle(new Vector2(970, 330));
+            candle[20] = new CCandle(new Vector2(1020, 350));
+            candle[21] = new CCandle(new Vector2(1170, 300));
+            candle[22] = new CCandle(new Vector2(1130, 290));
+            candle[23] = new CCandle(new Vector2(1090, 340));
+            candle[24] = new CCandle(new Vector2(1050, 350));
+
+
             mainfont = Content.Load<SpriteFont>(@"maintext");
             smallfont = Content.Load<SpriteFont>(@"smalltext");
         }
@@ -71,7 +98,9 @@ namespace agentkiwi
             }
 
             machine.update(gameTime);
-            candle.update(gameTime);
+
+            foreach (CCandle x in candle)
+                x.update(gameTime);
 
             base.Update(gameTime);
         }
@@ -83,11 +112,10 @@ namespace agentkiwi
             spriteBatch.Begin();
             
             spriteBatch.Draw(caketex, cakerect, Color.White);
-            //foreach (Vector2 displacement in new Vector2[] { new Vector2(0, 0), new Vector2(100, 100) })
-            //{
-            //    //spriteBatch.Draw(candletex, new Rectangle((int)displacement.X, (int)displacement.Y, 15, 120), Color.White);
-            //}
-            candle.draw(spriteBatch);
+
+            foreach (CCandle x in candle)
+                x.draw(spriteBatch);
+
             machine.draw(spriteBatch);
 
 
