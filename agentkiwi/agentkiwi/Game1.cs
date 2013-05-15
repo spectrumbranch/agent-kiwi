@@ -77,10 +77,10 @@ namespace agentkiwi
             spriteBatch.Begin();
             
             spriteBatch.Draw(caketex, cakerect, Color.White);
-            foreach (Vector2 displacement in new Vector2[] { new Vector2(0, 0), new Vector2(100, 100) })
-            {
-                spriteBatch.Draw(candletex, new Rectangle((int)displacement.X, (int)displacement.Y, 15, 120), Color.White);
-            }
+            //foreach (Vector2 displacement in new Vector2[] { new Vector2(0, 0), new Vector2(100, 100) })
+            //{
+            //    //spriteBatch.Draw(candletex, new Rectangle((int)displacement.X, (int)displacement.Y, 15, 120), Color.White);
+            //}
             candle.draw(spriteBatch);
             machine.draw(spriteBatch);
            

@@ -16,7 +16,7 @@ namespace agentkiwi
         public CCandle(Vector2 position)
         {
             _position = position;
-            _machine = new CParticleMachine(type.CANDLE, new Vector2(_position.X + 2, _position.Y));
+            _machine = new CParticleMachine(type.CANDLE, new Vector2(_position.X + 7, _position.Y));
         }
 
         public void update(GameTime gameTime)
@@ -27,7 +27,7 @@ namespace agentkiwi
         public void draw(SpriteBatch spriteBatch)
         {
             _machine.draw(spriteBatch);
-            spriteBatch.Draw(candle, new Rectangle((int)_position.X, (int)_position.Y, candle.Width, candle.Height),Color.White);
+            spriteBatch.Draw(candle, new Rectangle((int)_position.X, (int)_position.Y, 15, 120),Color.White);
         }
     }
 }

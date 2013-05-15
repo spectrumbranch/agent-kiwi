@@ -56,7 +56,7 @@ namespace agentkiwi
                 _lvl1Part.Add(new CParticle(new Color(255, 150, 0), randomizer.Next(1, 2), _position, randomizer.Next(70, 100), new Vector2(80, 100)));
                 _lvl1Part.Add(new CParticle(new Color(255, 150, 0), randomizer.Next(1, 2), _position, randomizer.Next(70, 100), new Vector2(80, 100)));
 
-                _lvl1Part.Add(new CParticle(new Color(255, 30, 0), randomizer.Next(1, 1), _position, randomizer.Next(90, 120), new Vector2(85, 95)));
+                _lvl1Part.Add(new CParticle(new Color(255, 30, 0), randomizer.Next(1, 2), _position, randomizer.Next(90, 120), new Vector2(85, 95)));
             }
 
 
