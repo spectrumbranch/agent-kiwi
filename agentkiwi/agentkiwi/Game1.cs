@@ -18,6 +18,7 @@ namespace agentkiwi
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        CParticleMachine machine = null;
 
         public Game1()
         {
@@ -46,6 +47,8 @@ namespace agentkiwi
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            CParticle.box = Content.Load<Texture2D>("box");
+            machine = new CParticleMachine();
 
             // TODO: use this.Content to load your game content here
         }
@@ -70,6 +73,7 @@ namespace agentkiwi
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            machine.update(gameTime);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -84,6 +88,9 @@ namespace agentkiwi
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            machine.draw(spriteBatch);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
