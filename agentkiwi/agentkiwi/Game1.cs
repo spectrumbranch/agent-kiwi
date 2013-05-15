@@ -20,6 +20,8 @@ namespace agentkiwi
         Rectangle cakerect;
         Texture2D caketex;
 
+        Texture2D candletex;
+
         int screenWidth = 1280;
         int screenHeight = 720;
 
@@ -49,6 +51,7 @@ namespace agentkiwi
 
             cakerect = new Rectangle(0, 0, screenWidth, screenHeight);
             caketex = Content.Load<Texture2D>("cake");
+            candletex = Content.Load<Texture2D>("candle");
         }
 
         protected override void UnloadContent()  {  }
@@ -72,6 +75,10 @@ namespace agentkiwi
 
             spriteBatch.Begin();
             spriteBatch.Draw(caketex, cakerect, Color.White);
+            foreach (Vector2 displacement in new Vector2[] {new Vector2(0,0), new Vector2(100,100)}) 
+            {
+                spriteBatch.Draw(candletex, new Rectangle((int)displacement.X, (int)displacement.Y, 15, 120), Color.White);
+            }
             machine.draw(spriteBatch);
             spriteBatch.End();
 
