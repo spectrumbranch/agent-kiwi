@@ -17,6 +17,9 @@ namespace agentkiwi
         SpriteBatch spriteBatch;
         CParticleMachine machine = null;
 
+        Rectangle cakerect;
+        Texture2D caketex;
+
         int screenWidth = 1280;
         int screenHeight = 720;
 
@@ -44,7 +47,8 @@ namespace agentkiwi
             CParticle.box = Content.Load<Texture2D>("box");
             machine = new CParticleMachine();
 
-            Rectangle cakerect = new Rectangle(0, 0, screenWidth, screenHeight);
+            cakerect = new Rectangle(0, 0, screenWidth, screenHeight);
+            caketex = Content.Load<Texture2D>("cake");
         }
 
         protected override void UnloadContent()  {  }
@@ -67,6 +71,7 @@ namespace agentkiwi
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
+            spriteBatch.Draw(caketex, cakerect, Color.White);
             machine.draw(spriteBatch);
             spriteBatch.End();
 
