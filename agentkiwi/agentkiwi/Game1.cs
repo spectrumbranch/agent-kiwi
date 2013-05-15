@@ -22,6 +22,9 @@ namespace agentkiwi
 
         Texture2D candletex;
 
+        SpriteFont mainfont;
+        SpriteFont smallfont;
+
         int screenWidth = 1280;
         int screenHeight = 720;
 
@@ -53,6 +56,9 @@ namespace agentkiwi
             caketex = Content.Load<Texture2D>("cake");
             candletex = Content.Load<Texture2D>("candle");
             CCandle.candle = candletex;
+
+            mainfont = Content.Load<SpriteFont>(@"maintext");
+            smallfont = Content.Load<SpriteFont>(@"smalltext");
         }
 
         protected override void UnloadContent()  {  }
@@ -83,7 +89,10 @@ namespace agentkiwi
             //}
             candle.draw(spriteBatch);
             machine.draw(spriteBatch);
-           
+
+
+            spriteBatch.DrawString(mainfont, "Happy Birthday Ash!", new Vector2(190,590), Color.Black);
+            spriteBatch.DrawString(smallfont, "with love from\nsteve calandra & chris bebry", new Vector2(1060, 680), Color.Black);
             spriteBatch.End();
 
             base.Draw(gameTime);
