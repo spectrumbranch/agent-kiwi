@@ -50,11 +50,12 @@ namespace agentkiwi
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             CParticle.box = Content.Load<Texture2D>("box");
-            machine = new CParticleMachine(type.ROCKET, new Vector2(200,200));
+            machine = new CParticleMachine(type.ROCKET, new Vector2(-725,100));
 
             cakerect = new Rectangle(0, 0, screenWidth, screenHeight);
             caketex = Content.Load<Texture2D>("cake");
             candletex = Content.Load<Texture2D>("candle");
+            thefunguy.fun = Content.Load<Texture2D>("thefun");
             CCandle.candle = candletex;
 
             candle[0] = new CCandle(new Vector2(130,330));
@@ -102,6 +103,8 @@ namespace agentkiwi
             foreach (CCandle x in candle)
                 x.update(gameTime);
 
+            thefunguy.update(gameTime);
+
             base.Update(gameTime);
         }
 
@@ -115,6 +118,8 @@ namespace agentkiwi
 
             foreach (CCandle x in candle)
                 x.draw(spriteBatch);
+
+            thefunguy.draw(spriteBatch);
 
             machine.draw(spriteBatch);
 

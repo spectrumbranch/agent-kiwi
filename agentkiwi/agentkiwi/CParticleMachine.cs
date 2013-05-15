@@ -40,12 +40,36 @@ namespace agentkiwi
                 _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
                 _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
                 _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
+                _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
+                _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
+                _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
+                _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
+                _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
+                _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
+                _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
+                _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
+                _lvl1Part.Add(new CParticle(new Color(255, 255, 0), randomizer.Next(1, 5), _position, randomizer.Next(50, 80), new Vector2(145, 225)));
 
+                _lvl1Part.Add(new CParticle(new Color(255, 150, 0), randomizer.Next(1, 3), _position, randomizer.Next(70, 100), new Vector2(160, 210)));
+                _lvl1Part.Add(new CParticle(new Color(255, 150, 0), randomizer.Next(1, 3), _position, randomizer.Next(70, 100), new Vector2(145, 210)));
+                _lvl1Part.Add(new CParticle(new Color(255, 150, 0), randomizer.Next(1, 3), _position, randomizer.Next(70, 100), new Vector2(160, 210)));
+                _lvl1Part.Add(new CParticle(new Color(255, 150, 0), randomizer.Next(1, 3), _position, randomizer.Next(70, 100), new Vector2(145, 210)));
+                _lvl1Part.Add(new CParticle(new Color(255, 150, 0), randomizer.Next(1, 3), _position, randomizer.Next(70, 100), new Vector2(160, 210)));
+                _lvl1Part.Add(new CParticle(new Color(255, 150, 0), randomizer.Next(1, 3), _position, randomizer.Next(70, 100), new Vector2(145, 210)));
                 _lvl1Part.Add(new CParticle(new Color(255, 150, 0), randomizer.Next(1, 3), _position, randomizer.Next(70, 100), new Vector2(160, 210)));
                 _lvl1Part.Add(new CParticle(new Color(255, 150, 0), randomizer.Next(1, 3), _position, randomizer.Next(70, 100), new Vector2(145, 210)));
 
                 _lvl1Part.Add(new CParticle(new Color(255, 30, 0), randomizer.Next(1, 2), _position, randomizer.Next(90, 120), new Vector2(170, 190)));
-                _position.X += 3;
+                _lvl1Part.Add(new CParticle(new Color(255, 30, 0), randomizer.Next(1, 2), _position, randomizer.Next(90, 120), new Vector2(170, 190)));
+                _lvl1Part.Add(new CParticle(new Color(255, 30, 0), randomizer.Next(1, 2), _position, randomizer.Next(90, 120), new Vector2(170, 190)));
+                _lvl1Part.Add(new CParticle(new Color(255, 30, 0), randomizer.Next(1, 2), _position, randomizer.Next(90, 120), new Vector2(170, 190)));
+                _position.X += 6;
+
+                if (_position.X >= 1700)
+                {
+                    _position.X = -225;
+                    thefunguy.position.X = -240;
+                }
             }
             else
             {
