@@ -9,32 +9,31 @@ namespace agentkiwi
 {
     class CParticleMachine
     {
-        private CParticle _particle; //test particle
+        private List<CParticle> _lvl1Part; //fastest particles
+        Random randomizer = new Random();
 
         public CParticleMachine()
         {
-            _particle = new CParticle(new Microsoft.Xna.Framework.Color(255, 255, 255), 5, new Vector2(300, 100), 50, new Vector2(135, 225));
+            _lvl1Part = new List<CParticle>(100);
         }
 
         public void update(GameTime gameTime)
         {
-            //this will be changed to work with an array later
-            if (_particle != null)
+            foreach (CParticle part in _lvl1Part)
             {
-                _particle.update(gameTime);
-
-                if (_particle.dead)
-                    _particle = null;
+                part.update(gameTime);
             }
+            _lvl1Part.Add(new CParticle(new Color(255, 255, 255), randomizer.Next(1, 5), new Vector2(300, 300), randomizer.Next(50, 80), new Vector2(145, 225)));
+
+            _lvl1Part.RemoveAll(p => p.dead == true);
 
             
         }
 
         public void draw(SpriteBatch spriteBatch)
         {
-            //same thing here
-            if (_particle != null)
-                _particle.draw(spriteBatch);
+            foreach (CParticle part in _lvl1Part)
+                part.draw(spriteBatch);
         }
 
 
