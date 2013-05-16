@@ -19,6 +19,7 @@ namespace agentkiwi
         CCandle[] candle = new CCandle[25];
         Rectangle cakerect;
         Texture2D caketex;
+        Song happybday;
 
         Texture2D candletex;
 
@@ -57,7 +58,8 @@ namespace agentkiwi
             candletex = Content.Load<Texture2D>("candle");
             thefunguy.fun = Content.Load<Texture2D>("thefun");
             CCandle.candle = candletex;
-
+            happybday = Content.Load<Song>("happybday");
+            //ew
             candle[0] = new CCandle(new Vector2(130,330));
             candle[1] = new CCandle(new Vector2(200, 340));
             candle[2] = new CCandle(new Vector2(160, 320));
@@ -87,6 +89,8 @@ namespace agentkiwi
 
             mainfont = Content.Load<SpriteFont>(@"maintext");
             smallfont = Content.Load<SpriteFont>(@"smalltext");
+            MediaPlayer.Play(happybday);
+            
         }
 
         protected override void UnloadContent()  {  }
